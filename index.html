@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 វេបសាយមេ (ភាគទី ១)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Khmer OS Battambang', sans-serif; text-align: center; background: #eef2f3; padding: 20px; }
+        .box { background: white; padding: 30px; border-radius: 15px; max-width: 700px; margin: 20px auto; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+        h2 { color: #333; margin-bottom: 20px; }
+        input { padding: 12px; width: 80%; font-size: 16px; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 20px; outline: none; text-align: center; }
+        input:focus { border-color: #007bff; }
+        
+        /* ស្ទីលរៀបចំសម្រាប់ប៊ូតុងទាំង ១៥ */
+        .btn-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px; }
+        .game-btn { color: white; border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.3s; }
+        .game-btn:hover { transform: scale(1.05); filter: brightness(1.2); }
+        
+        /* ពណ៌ប៊ូតុងផ្សេងៗគ្នាឱ្យងាយមើល */
+        .btn-orange { background: #f59f00; }
+        .btn-green { background: #2b8a3e; }
+        .btn-blue { background: #1c7ed6; }
+        .btn-purple { background: #ae3ec9; }
+        .btn-red { background: #e03131; }
+
+        .nav-bar { background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px; border: 1px solid #eee; }
+        .nav-title { font-weight: bold; margin-bottom: 12px; color: #555; }
+        iframe { width: 100%; height: 450px; border: 3px dashed #007bff; border-radius: 12px; margin-top: 25px; background: white; }
+        .game-zone { background: #e3fafc; padding: 20px; border-radius: 10px; border-left: 5px solid #0c8599; margin: 15px 0; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <div id="authBox" class="box">
+        <h2>សូមបង្កើតគណនីហ្គេមរបស់អ្នក</h2>
+        <p style="color:#666; margin-bottom:15px;">គណនីនេះនឹងប្រើបានគ្រប់ភាគទាំងអស់</p>
+        <input type="text" id="playerName" placeholder="បញ្ចូលឈ្មោះរបស់អ្នកត្រង់នេះ"><br>
+        <button id="btnJoin" style="background: #007bff; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold;">បង្កើតគណនី & ចូលលេង</button>
+    </div>
+
+    <div id="mainGameBox" class="box" style="display: none;">
+        <h2 id="welcomeUser">កំពុងផ្ទុកទិន្នន័យ...</h2>
+        
+        <div class="game-zone">
+            <h3 style="color:#0c8599; margin-bottom:10px;">🎯 ហ្គេមភាគទី ១៖ ប្រកួតបូកលេខរហ័ស</h3>
+            <p style="font-size:18px; font-weight:bold; margin-bottom:10px;">សំណួរ៖ ១៥ + ២៥ = ?</p>
+            <button onclick="alert('ត្រឹមត្រូវហើយ! អ្នកទទួលបានពិន្ទុ')" style="background: #0c8599; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">ឆ្លើយកូដភាគទី១</button>
+        </div>
+
+        <div class="nav-bar">
+            <p class="nav-title">🔗 ជ្រើសរើសភាគហ្គេមដើម្បីលេង (ទិន្នន័យរត់តាមអូតូ)៖</p>
+            <div class="btn-grid">
+                
+                <button class="game-btn btn-orange" onclick="switchModule('https://លីងវេបសាយទី២របស់បង.com')">ភាគទី ២</button>
+                <button class="game-btn btn-green" onclick="switchModule('https://លីងវេបសាយទី៣របស់បង.com')">ភាគទី ៣</button>
+                <button class="game-btn btn-blue" onclick="switchModule('https://លីងវេបសាយទី៤របស់បង.com')">ភាគទី ៤</button>
+                <button class="game-btn btn-purple" onclick="switchModule('https://លីងវេបសាយទី៥របស់បង.com')">ភាគទី ៥</button>
+                <button class="game-btn btn-red" onclick="switchModule('https://លីងវេបសាយទី៦របស់បង.com')">ភាគទី ៦</button>
+                
+                <button class="game-btn btn-orange" onclick="switchModule('https://លីងវេបសាយទី៧របស់បង.com')">ភាគទី ៧</button>
+                <button class="game-btn btn-green" onclick="switchModule('https://លីងវេបសាយទី៨របស់បង.com')">ភាគទី ៨</button>
+                <button class="game-btn btn-blue" onclick="switchModule('https://លីងវេបសាយទី៩របស់បង.com')">ភាគទី ៩</button>
+                <button class="game-btn btn-purple" onclick="switchModule('https://លីងវេបសាយទី១០របស់បង.com')">ភាគទី ១០</button>
+                <button class="game-btn btn-red" onclick="switchModule('https://លីងវេបសាយទី១១របស់បង.com')">ភាគទី ១១</button>
+                
+                <button class="game-btn btn-orange" onclick="switchModule('https://លីងវេបសាយទី១២របស់បង.com')">ភាគទី ១២</button>
+                <button class="game-btn btn-green" onclick="switchModule('https://លីងវេបសាយទី១៣របស់បង.com')">ភាគទី ១៣</button>
+                <button class="game-btn btn-blue" onclick="switchModule('https://លីងវេបសាយទី១៤របស់បង.com')">ភាគទី ១៤</button>
+                <button class="game-btn btn-purple" onclick="switchModule('https://លីងវេបសាយទី១៥របស់បង.com')">ភាគទី ១៥</button>
+
+            </div>
+        </div>
+
+        <iframe id="moduleViewer" src="https://លីងវេបសាយទី២របស់បង.com"></iframe>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        // ដុំកូដពិតប្រាកដរបស់បង
+        const firebaseConfig = {
+            apiKey: "AIzaSyC6dWAkX-4NfuBLG6vqAAf8DBET1F2NDdQ",
+            authDomain: "my-new-multi-game.firebaseapp.com",
+            projectId: "my-new-multi-game",
+            storageBucket: "my-new-multi-game.firebasestorage.app",
+            messagingSenderId: "234800975858",
+            appId: "1:234800975858:web:6d8923da0862d8ecaf656b",
+            measurementId: "G-CV5QWYLEH1"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);
+
+        let playerUid = "";
+        let playerName = "";
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                playerUid = user.uid;
+                onValue(ref(database, 'players/' + playerUid), (snapshot) => {
+                    const data = snapshot.val();
+                    if (snapshot.exists() && data.name) {
+                        playerName = data.name;
+                        loadDashboard();
+                    }
+                });
+            } else {
+                signInAnonymously(auth).catch(err => console.error("Error Auth:", err));
+            }
+        });
+
+        document.getElementById('btnJoin').onclick = () => {
+            const name = document.getElementById('playerName').value.trim();
+            if(!name) return alert("សូមបំពេញឈ្មោះរបស់អ្នកសិន!");
+            
+            set(ref(database, 'players/' + playerUid), {
+                uid: playerUid,
+                name: name
+            }).then(() => {
+                playerName = name;
+                loadDashboard();
+            }).catch(err => alert("Rules Error: " + err.message));
+        };
+
+        function loadDashboard() {
+            document.getElementById('authBox').style.display = 'none';
+            document.getElementById('mainGameBox').style.display = 'block';
+            document.getElementById('welcomeUser').innerHTML = `👤 គណនី៖ <span style="color:#007bff;">${playerName}</span> <br><small style="font-size:12px; color:#999; font-weight:normal;">UID: ${playerUid}</small>`;
+            sendDataToIframe();
+        }
+
+        window.switchModule = function(url) {
+            const iframe = document.getElementById('moduleViewer');
+            iframe.src = url;
+        }
+
+        function sendDataToIframe() {
+            const iframe = document.getElementById('moduleViewer');
+            iframe.onload = () => {
+                iframe.contentWindow.postMessage({ uid: playerUid, name: playerName }, '*');
+            };
+        }
+    </script>
+</body>
+</html>
